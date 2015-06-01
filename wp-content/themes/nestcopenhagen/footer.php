@@ -1,5 +1,17 @@
+  <div id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <p class="apply"><strong><a href="/apply">Apply for a room</a></strong></p>
+          <p><strong>To learn more about us and stay up to date, visit our <a href="//www.facebook.com/NestCopenhagen">Facebook page</a>.</strong></p>
+          <p>Also, lorem ipsum dolor sit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <?php wp_footer(); ?>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+  <?php wp_footer(); ?>
 
   </body>
 </html>

@@ -93,6 +93,23 @@ h2 {
 
 }
 
+// Column'd body text
+.columns-2 {
+  orphans: 2;
+  widows: 2;
+  column-gap: 50px;
+  -moz-column-gap: 50px;
+  -webkit-column-gap: 50px;
+
+  p {
+    margin: $base-height/2 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
 
 .site-spot {
   margin: $base-height * 2 0;
@@ -241,4 +258,83 @@ h2 {
   }
 }
 
+.np {
+  background: transparent url('./images/np.svg') no-repeat center top;
+  background-size: cover;
+  margin: -50px 0 0;
+  padding: 50px 0;
+}
+
+#map {
+  background-color: #ed6c22;
+  position: relative;
+  height: 415px;
+  overflow: hidden;
+}
+
+#map-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+}
+
+#map-canvas, #map-canvas[style] {
+  background-color: #ed6c22 !important;
+}
+
+#map .overlay {
+  position: relative;
+  z-index: 4;
+}
+
+#map .overlay, .overlay h2, .overlay p {
+  color: palette(white);
+}
+
+#map .overlay h2 {
+  margin-top: 80px;
+  margin-left: 300px;
+}
+
+#map .overlay p {
+  margin-left: 300px;
+  font-size: $font-size * 1.5;
+  line-height: $base-height * 1.5;
+}
+
+#footer {
+  margin: 50px 0 100px;
+  font-size: $font-size * 1.25;
+}
+
+#footer p {
+  margin-right: 220px;
+}
+
+#footer .c {
+  position: relative;
+  overflow: hidden;
+}
+
+#footer strong {
+  font-weight: 500;
+  color: palette(gray, heading);
+}
+
+#footer p.apply {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 0;
+}
+
+#footer p.apply a {
+  background-color: palette(orange);
+  color: palette(white);
+  padding: 4px 15px;
+  border-radius: 6px;
+}
 

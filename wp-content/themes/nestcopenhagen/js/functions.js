@@ -5,7 +5,12 @@
  * Contains handlers for navigation and widget area.
  */
 
+
 ( function( $ ) {
+
+ // Do we need this? -- Andy
+
+ /*
 	var $body, $window, $sidebar, adminbarOffset, top = false,
 	    bottom = false, windowWidth, windowHeight, lastWindowPos = 0,
 	    topOffset = 0, bodyHeight, sidebarHeight, resizeTimer;
@@ -127,5 +132,103 @@
 			setTimeout( resizeAndScroll, 100 * i );
 		}
 	} );
+*/
+
+$(document).ready(function(){
+
+	// Maps stuff!
+	var map, styles = [
+		{
+		  "featureType": "water",
+		  "stylers": [
+		    { "color": "#b95318" }
+		  ]
+		},{
+		  "featureType": "landscape",
+		  "stylers": [
+		    { "color": "#ed6c22" }
+		  ]
+		},{
+		  "featureType": "road",
+		  "elementType": "geometry",
+		  "stylers": [
+		    { "color": "#f9a255" }
+		  ]
+		},{
+		  "featureType": "road",
+		  "elementType": "labels",
+		  "stylers": [
+		    { "visibility": "off" }
+		  ]
+		},{
+		  "featureType": "poi",
+		  "stylers": [
+		    { "visibility": "off" }
+		  ]
+		},{
+		  "featureType": "transit",
+		  "elementType": "geometry",
+		  "stylers": [
+		    { "color": "#f9a255" },
+		    { "visibility": "simplified" }
+		  ]
+		},{
+		  "featureType": "transit",
+		  "elementType": "labels",
+		  "stylers": [
+		    { "visibility": "off" }
+		  ]
+		},{
+		  "featureType": "administrative",
+		  "elementType": "labels.text.fill",
+		  "stylers": [
+		    { "color": "#f9a255" }
+		  ]
+		},{
+		  "featureType": "administrative",
+		  "elementType": "labels.text.stroke",
+		  "stylers": [
+		    { "color": "#ed6c22" }
+		  ]
+		},{
+		  "featureType": "administrative",
+		  "elementType": "geometry",
+		  "stylers": [
+		    { "visibility": "off" }
+		  ]
+		}
+	];
+	function initialize() {
+		var nestCoords = new google.maps.LatLng(55.672942, 12.562943)
+		var mapOptions = {
+			zoom: 14,
+			center: new google.maps.LatLng(55.672942, 12.562943 + 0.025),
+			disableDefaultUI: true,
+			scrollwheel: false,
+			styles: styles
+		};
+		map = new google.maps.Map(document.getElementById('map-canvas'),
+				mapOptions);
+
+		var imgSize = 40
+
+		var marker = new google.maps.Marker({
+			position: nestCoords,
+			map: map,
+			title: 'Reventlowsgade 10, Copenhagen',
+			icon: {
+				url: '/wp-content/themes/nestcopenhagen/images/logosmall.svg',
+				size: new google.maps.Size(56.1, 57.3),
+				scaledSize: new google.maps.Size(0.98*imgSize, imgSize),
+				origin: new google.maps.Point(0,0),
+				anchor: new google.maps.Point((0.98*imgSize)/2, imgSize/2)
+			}
+		});
+	}
+
+	google.maps.event.addDomListener(window, 'load', initialize);
+})
 
 } )( jQuery );
+
+
