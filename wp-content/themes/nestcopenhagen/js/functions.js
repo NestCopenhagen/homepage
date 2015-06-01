@@ -204,7 +204,10 @@ $(document).ready(function(){
 			zoom: 14,
 			center: new google.maps.LatLng(55.672942, 12.562943 + 0.025),
 			disableDefaultUI: true,
+			disableDoubleClickZoom: false,
+			draggable: false,
 			scrollwheel: false,
+			keyboardShortcuts: false,
 			styles: styles
 		};
 		map = new google.maps.Map(document.getElementById('map-canvas'),
