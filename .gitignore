@@ -1,3 +1,7 @@
 .DS_Store
-
 node_modules/
+test.html
+
+# Generated files
+wp-content/themes/nestcopenhagen/style.css
+wp-content/themes/nestcopenhagen/stylesheets/main.css
