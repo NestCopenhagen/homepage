@@ -24,13 +24,11 @@
           <div class="site-description col-sm-8"><?php echo $description; ?></div>
         </div>
       <?php endif; ?>
-      <div class="row">
+      <div class="row frontpagehead">
         <div class="col-sm-12">
           <h1 class="site-title">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-              <img src="<?php bloginfo('template_url'); ?>/images/nest-white.svg" />
-              <span>Nest</span>
-              Copenhagen
+              <img src="<?php bloginfo('template_url'); ?>/images/logo.svg" width="351" height="56" alt="Nest Copenhagen">
             </a>
           </h1>
         </div>
@@ -38,8 +36,13 @@
 
     <?php else: ?>
 
-      <div class="row">
+      <div class="row pagehead">
         <div class="col-sm-12">
+          <h2 class="site-title">
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+              <img src="<?php bloginfo('template_url'); ?>/images/logo.svg" width="230" height="38" alt="Nest Copenhagen">
+            </a>
+          </h2>
           <h1 class="page-title">
             <img src="<?php bloginfo('template_url'); ?>/images/nest-white.svg" />
             <?php echo $wp_query->post->post_title; ?>
@@ -47,8 +50,6 @@
           </h1>
         </div>
       </div>
-        
-
     <?php endif; ?>
   </div>
 

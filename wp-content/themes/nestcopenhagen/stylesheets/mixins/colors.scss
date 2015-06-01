@@ -3,7 +3,8 @@ $palettes: (
   orange: (
     base:  #ed6c22,
     light: lighten(#ed6c22, 10%),
-    dark:  #883b0e
+    dark:  #883b0e,
+    bright: #f9cab2
   ),
 
   blue: (
@@ -13,9 +14,11 @@ $palettes: (
   ),
 
   gray: (
-    base:   #9E9E9E,
-    light:  #F5F5F5,
-    dark:   #424242
+    base:    #9E9E9E,
+    light:   #F5F5F5,
+    dark:    #424242,
+    body:    #777,
+    heading: #333
   ),
 
   white: (
