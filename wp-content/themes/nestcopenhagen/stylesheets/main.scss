@@ -78,7 +78,8 @@ h2 {
   }
 
   h2.site-title {
-    margin-left: -45px;
+    margin: $base-height * 1.5 0 $base-height -45px;
+    padding: 0;
   }
   
   .page-title {
@@ -89,6 +90,10 @@ h2 {
     span.edit-link {
       font-size: 0.5em;
     }
+  }
+
+  .pagehead .page-title {
+    margin: $base-height 0 $base-height * 1.5;
   }
 
 }

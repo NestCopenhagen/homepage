@@ -44,7 +44,6 @@
             </a>
           </h2>
           <h1 class="page-title">
-            <img src="<?php bloginfo('template_url'); ?>/images/nest-white.svg" />
             <?php echo $wp_query->post->post_title; ?>
             <?php edit_post_link( 'Edit', '<span class="edit-link">( ', ' )</span>' ); ?>
           </h1>
