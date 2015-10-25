@@ -165,7 +165,7 @@ p.intro {
   text-align: center;
 }
 
-a.user-profile-teaser {
+.user-profile-teaser {
   display: inline-block;
   width: 5.5rem;
   height: 5.5rem;
@@ -186,7 +186,7 @@ a.user-profile-teaser {
       opacity: 1;
     }
   //}
-
+  
   .overlay {
     display: table;
     background: rgba(palette(orange), 0.8);
