@@ -15,6 +15,10 @@
     // Post thumbnail.
     twentyfifteen_post_thumbnail();
   ?>
+  <h1 class="page-title">
+    <?php echo $wp_query->post->post_title; ?>
+    <?php edit_post_link( 'Edit', '<span class="edit-link">', '</span>' ); ?>
+  </h1>
 
   <div class="entry-content">
     <?php

@@ -13,7 +13,7 @@ $screen-md-min: 992px;
 $screen-md-max: 1199px;
 $screen-lg-min: 1200px;
 
-body {
+body, html {
   font-size: $font-size;
   line-height: $base-height;
 
@@ -27,8 +27,8 @@ p {
 
 h2 {
   font-size: $font-size-max;
-  line-height: $base-height;
-  margin: $base-height * 1.5 0;
+  line-height: 1rem;
+  margin: 1.5rem 0;
   font-weight: 500;
   color: palette(gray, heading);
 }
@@ -60,16 +60,16 @@ h2 {
   .site-description {
     font-size: $font-size-max;
     font-weight: 500;
-    line-height: $base-height * 2;
-    padding-top: $base-height * 6.5;
-    padding-bottom: $base-height * 1.5;
+    line-height: 3rem;
+    padding-top: 10rem;
+    padding-bottom: 2rem;
   }
 
   .site-title, .page-title {
     font-size: $font-size-max;
     font-weight: 200;
     padding: 0;
-    padding-bottom: $base-height * 2.5;
+    padding-bottom: 0;
 
     margin: 0 0 0 -70px;
 
@@ -78,12 +78,18 @@ h2 {
   }
 
   h2.site-title {
-    margin: $base-height * 1.5 0 $base-height -45px;
-    padding: 0;
+    margin-left: -45px;
   }
-  
+
+  .hero-message h4 {
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
+  }
+
   .page-title {
-    margin: $base-height * 2.5 0;
+    margin: 2.5rem 0;
     padding: 0;
     font-weight: 500;
 
@@ -92,9 +98,6 @@ h2 {
     }
   }
 
-  .pagehead .page-title {
-    margin: $base-height 0 $base-height * 1.5;
-  }
 
 }
 
@@ -102,15 +105,17 @@ h2 {
 .columns-2 {
   orphans: 2;
   widows: 2;
-  column-gap: 50px;
-  -moz-column-gap: 50px;
-  -webkit-column-gap: 50px;
+  column-gap: 2rem;
+  -moz-column-gap: 2rem;
+  -webkit-column-gap: 2rem;
 
   p {
-    margin: $base-height/2 0;
+    margin: 0;
 
-    &:first-child {
-      margin-top: 0;
+    &:after {
+      content: ' ';
+      display: block;
+      height: 1rem;
     }
   }
 }
@@ -139,33 +144,29 @@ h2 {
 
 
 .profile-teaser-container {
-  margin: 0 -3.75px;
   padding: 0;
+  margin-bottom: 2rem;
   line-height: 0;
   text-align: center;
 }
 
-.user-profile-teaser {
+a.user-profile-teaser {
   display: inline-block;
-  width: 90px;
-  height: 90px;
+  width: 5.5rem;
+  height: 5.5rem;
   background-size: cover;
   background-position: center;
   border-radius: 50%;
   list-style: none;
-  margin: 3.75px;
+  margin: 0.5rem;
   vertical-align: middle;
+  text-decoration: none;
 
-  a {
-    display: block;
-    width: 100%;
-    height: 100%;
-
-    &:hover .overlay {
+  &:hover {
+    .overlay {
       opacity: 1;
     }
   }
-
 
   .overlay {
     display: table;
@@ -185,47 +186,50 @@ h2 {
   h4 {
     color: palette(white);
     font-weight: 400;
-    font-size: $font-size * 0.9;
-    line-height: $base-height - 4px;
+    font-size: 0.9rem;
+    line-height: 1rem;
+    padding: 0 0.2rem;
   }
-}
 
-
-@media only screen and (min-width: $screen-sm-min) {
-  $size: 120px / 6;
-  .profile-teaser-container {
-    margin: 0 -$size;
-  }
-  
-  .user-profile-teaser {
-    width: 150px;
-    height: 150px;
-    margin: $size;
+  @media only screen and (min-width: $screen-sm-min) {
+    width: 8rem;
+    height: 8rem;
+    margin: 1rem;
 
     h4 {
-      font-size: $font-size * 1.5;
-      line-height: $base-height + 5px;
+      font-size: 1.3rem;
+      line-height: 1.5rem;
+      padding: 0 0.5rem;
     }
+  }
+
+  @media only screen and (min-width: $screen-md-min) {
   }
 }
 
-@media only screen and (min-width: $screen-md-min) {
-  $size: 70px / 8;
-  .profile-teaser-container {
-    margin: 0 -$size;
-  }
-  
-  .user-profile-teaser {
-    width: 160px;
-    height: 160px;
-    margin: $size;
-  }
+
+.site-nav-wrapper {
+  height: $base-height * 2.5;
+  margin-bottom: $base-height;
+}
+
+.admin-bar .site-navigation.fixed {
+  top: 32px;
 }
 
 .site-navigation {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
   border-bottom: 1px solid palette(orange, bright);
-  margin-bottom: $base-height;
   line-height: $base-height * 2.5;
+  background: rgba(palette(white), 0.95);
+
+  &.fixed {
+    position: fixed;
+    z-index: 1;
+  }
 
   ul {
     position: relative;
@@ -262,6 +266,15 @@ h2 {
     box-shadow: inset 0 -1px palette(orange);
   }
 }
+
+
+.photo-slide-page {
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
 
 .np {
   background: transparent url('./images/np.svg') no-repeat center top;

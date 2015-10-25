@@ -8,6 +8,9 @@
 
 ( function( $ ) {
 
+
+  
+
  // Do we need this? -- Andy
 
  /*
@@ -135,6 +138,25 @@
 */
 
 $(document).ready(function(){
+
+  var $window = $( window ),
+      $navbar = $( '.site-navigation' ),
+      $header = $( '.site-header' ),
+      headerHeight = $header.outerHeight(),
+      navbarIsFixed = false;
+
+  $window.scroll(function() {
+    var scroll = window.scrollY;
+    if (navbarIsFixed === false && scroll >= headerHeight) {
+      $navbar.addClass('fixed');
+      navbarIsFixed = true;
+    } else if (navbarIsFixed === true && scroll <= headerHeight) {
+      $navbar.removeClass('fixed');
+      navbarIsFixed = false;
+    }
+  });
+
+
 
 	// Maps stuff!
 	var map, styles = [

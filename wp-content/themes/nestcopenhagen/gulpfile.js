@@ -10,8 +10,8 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('stylesheets/'))
     .pipe(plugins.minifyCss({ keepSpecialComments: 1 }))
     .pipe(plugins.rename('style.css'))
-    .pipe(gulp.dest('./'));
-    //.pipe(plugins.notify({ message: 'Styles task complete' }));
+    .pipe(gulp.dest('./'))
+    .pipe(plugins.notify({ message: 'Styles task complete' }));
 });
 
 // Watch

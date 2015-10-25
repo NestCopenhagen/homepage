@@ -34,33 +34,48 @@
         </div>
       </div>
 
+      <div class="row hero-message">
+        <div class="col-sm-12">
+          <?php $page = get_page_by_path('frontpage', OBJECT); ?>
+          <h4><?php echo get_post_custom($page->ID)['hero_message'][0]; ?>&ensp;</h4>
+        </div>
+      </div>
+
     <?php else: ?>
 
       <div class="row pagehead">
         <div class="col-sm-12">
-          <h2 class="site-title">
+          <h2 class="page-title">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
               <img src="<?php bloginfo('template_url'); ?>/images/logo.svg" width="230" height="38" alt="Nest Copenhagen">
             </a>
           </h2>
-          <h1 class="page-title">
-            <?php echo $wp_query->post->post_title; ?>
-            <?php edit_post_link( 'Edit', '<span class="edit-link">( ', ' )</span>' ); ?>
-          </h1>
         </div>
       </div>
     <?php endif; ?>
+
   </div>
 
 </header>
 
-<nav class="site-navigation">
-  <div class="container">
-    <div class="row">
-      <?php wp_nav_menu( array( 
-        'theme_location' => 'header-menu',
-        'container_class' => 'col-sm-12'
-      ) ); ?>
+
+
+<div class="site-nav-wrapper">
+  <nav class="site-navigation">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="fb-like" data-href="https://www.facebook.com/NestCopenhagen" 
+            data-send="false" data-layout="button_count" data-width="80" 
+            data-show-faces="true" data-font="verdana" 
+            style="margin-right: 20px; width: 75px;"></div>
+
+          <?php wp_nav_menu( array(
+            'theme_location' => 'header-menu',
+            'container_class' => ''
+          ) ); ?>
+        </div>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+</div>

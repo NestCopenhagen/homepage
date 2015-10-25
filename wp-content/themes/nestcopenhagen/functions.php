@@ -13,21 +13,11 @@ if ( ! function_exists( 'nest_setup' ) ) :
     add_image_size( 'frontpage-profile-picture', 360, 360, true );
 
   }
-endif;
+endif; // twentyfifteen_setup
 
 add_action( 'after_setup_theme', 'setup' );
 
 
-function add_remove_user_contact_fields( $contactmethods ) {
- 
-  $contactmethods['phone'] = 'Phone number';
-  $contactmethods['title'] = 'Coorporate title';
-  $contactmethods['nest_title'] = 'Nest Title';
-  
-  return $contactmethods;
-}
- 
-add_filter('user_contactmethods','add_remove_user_contact_fields',10,1);
 
 
 if ( ! function_exists( 'twentyfifteen_fonts_url' ) ) :
