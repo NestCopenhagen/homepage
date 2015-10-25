@@ -13,6 +13,14 @@
 </head>
 
 <body <?php body_class(); ?>>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=252798968089727";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <header class="site-header" role="banner">
   <div class="container">
@@ -64,17 +72,10 @@
   <nav class="site-navigation">
     <div class="container">
       <div class="row">
-        <div class="col-sm-12">
-          <div class="fb-like" data-href="https://www.facebook.com/NestCopenhagen" 
-            data-send="false" data-layout="button_count" data-width="80" 
-            data-show-faces="true" data-font="verdana" 
-            style="margin-right: 20px; width: 75px;"></div>
-
-          <?php wp_nav_menu( array(
-            'theme_location' => 'header-menu',
-            'container_class' => ''
-          ) ); ?>
-        </div>
+        <?php wp_nav_menu( array( 
+          'theme_location' => 'header-menu',
+          'container_class' => 'col-sm-12'
+        ) ); ?>
       </div>
     </div>
   </nav>
