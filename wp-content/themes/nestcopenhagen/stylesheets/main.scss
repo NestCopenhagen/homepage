@@ -127,7 +127,6 @@ p.intro {
   }
 }
 
-
 .site-spot {
   margin: $base-height * 2 0;
   padding: $base-height * 2 0;
@@ -153,6 +152,10 @@ p.intro {
   .fat {
     font-weight: 500;
   }
+}
+
+.pre-spot {
+  border-bottom: 1px solid #ccc;
 }
 
 .profile-teaser-container {
