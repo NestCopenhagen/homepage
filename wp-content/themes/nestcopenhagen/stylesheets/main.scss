@@ -78,8 +78,7 @@ h2 {
   }
 
   h2.site-title {
-    margin: $base-height * 1.5 0 $base-height -45px;
-    padding: 0;
+    margin-left: -45px;
   }
   
   .page-title {
@@ -91,11 +90,15 @@ h2 {
       font-size: 0.5em;
     }
   }
+}
 
-  .pagehead .page-title {
-    margin: $base-height 0 $base-height * 1.5;
+p.intro {
+  font-size: 112.5%;
+  line-height: 1.5em;
+
+  strong {
+    color: #555;
   }
-
 }
 
 // Column'd body text
@@ -119,24 +122,29 @@ h2 {
 .site-spot {
   margin: $base-height * 2 0;
   padding: $base-height * 2 0;
-  color: palette(white);
   font-weight: 100;
   letter-spacing: .025em;
+
+  &, p {
+    color: palette(white);
+  }
 
   &.frontpage-spot {
     background: url('./images/frontpage-spot.jpg') no-repeat center top;
     background-size: cover;
 
-    font-size: $font-size-max * 1.3;
-    line-height: $base-height * 2.6;
+    font-size: $font-size-max;
+    line-height: 1.3em;
+  }
+
+  p {
+    margin: $base-height * 0.5 0;
   }
 
   .fat {
     font-weight: 500;
   }
 }
-
-
 
 .profile-teaser-container {
   margin: 0 -3.75px;
@@ -156,15 +164,15 @@ h2 {
   margin: 3.75px;
   vertical-align: middle;
 
-  a {
+  /*a {
     display: block;
     width: 100%;
-    height: 100%;
+    height: 100%;*/
 
     &:hover .overlay {
       opacity: 1;
     }
-  }
+  //}
 
 
   .overlay {
@@ -216,8 +224,8 @@ h2 {
   }
   
   .user-profile-teaser {
-    width: 160px;
-    height: 160px;
+    width: 180px;
+    height: 180px;
     margin: $size;
   }
 }
@@ -273,7 +281,7 @@ h2 {
 #map {
   background-color: #ed6c22;
   position: relative;
-  height: 415px;
+  //height: 415px;
   overflow: hidden;
 }
 
@@ -293,25 +301,34 @@ h2 {
 #map .overlay {
   position: relative;
   z-index: 4;
+
+  &, h2, p {
+    color: palette(white);
+  }
+
+  h2 {
+    margin-top: 80px;
+    margin-left: 300px;
+  }
+
+  p {
+    margin-left: 300px;
+    margin-bottom: 80px;
+    font-size: $font-size * 1.5;
+    line-height: $base-height * 1.5;
+  }
 }
 
-#map .overlay, .overlay h2, .overlay p {
-  color: palette(white);
-}
-
-#map .overlay h2 {
-  margin-top: 80px;
-  margin-left: 300px;
-}
-
-#map .overlay p {
-  margin-left: 300px;
-  font-size: $font-size * 1.5;
-  line-height: $base-height * 1.5;
+@media only screen and (max-width: $screen-sm-min) {
+  #map .overlay {
+    h2, p {
+      margin-left: 0;
+    }
+  }
 }
 
 #footer {
-  margin: 50px 0 100px;
+  margin: 50px 0 80px;
   font-size: $font-size * 1.25;
 }
 

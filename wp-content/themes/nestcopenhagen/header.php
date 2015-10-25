@@ -13,6 +13,14 @@
 </head>
 
 <body <?php body_class(); ?>>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=252798968089727";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <header class="site-header" role="banner">
   <div class="container">
@@ -34,33 +42,41 @@
         </div>
       </div>
 
+      <div class="row hero-message">
+        <div class="col-sm-12">
+          <?php $page = get_page_by_path('frontpage', OBJECT); ?>
+          <h4><?php echo get_post_custom($page->ID)['hero_message'][0]; ?>&ensp;</h4>
+        </div>
+      </div>
+
     <?php else: ?>
 
       <div class="row pagehead">
         <div class="col-sm-12">
-          <h2 class="site-title">
+          <h2 class="page-title">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
               <img src="<?php bloginfo('template_url'); ?>/images/logo.svg" width="230" height="38" alt="Nest Copenhagen">
             </a>
           </h2>
-          <h1 class="page-title">
-            <?php echo $wp_query->post->post_title; ?>
-            <?php edit_post_link( 'Edit', '<span class="edit-link">( ', ' )</span>' ); ?>
-          </h1>
         </div>
       </div>
     <?php endif; ?>
+
   </div>
 
 </header>
 
-<nav class="site-navigation">
-  <div class="container">
-    <div class="row">
-      <?php wp_nav_menu( array( 
-        'theme_location' => 'header-menu',
-        'container_class' => 'col-sm-12'
-      ) ); ?>
+
+
+<div class="site-nav-wrapper">
+  <nav class="site-navigation">
+    <div class="container">
+      <div class="row">
+        <?php wp_nav_menu( array( 
+          'theme_location' => 'header-menu',
+          'container_class' => 'col-sm-12'
+        ) ); ?>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+</div>
