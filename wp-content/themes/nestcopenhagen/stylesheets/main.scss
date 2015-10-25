@@ -167,6 +167,10 @@ p.intro {
   text-align: center;
 }
 
+.manifesto {
+  width: 100%;
+}
+
 .user-profile-teaser {
   display: inline-block;
   width: 5.5rem;
@@ -179,16 +183,6 @@ p.intro {
   vertical-align: middle;
   text-decoration: none;
 
-  /*a {
-    display: block;
-    width: 100%;
-    height: 100%;*/
-
-    &:hover .overlay {
-      opacity: 1;
-    }
-  //}
-  
   .overlay {
     display: table;
     background: rgba(palette(orange), 0.8);

@@ -3,7 +3,14 @@ node_modules/
 test.html
 
 wp-content/uploads
+.sass-cache/
 
 # Generated files
 wp-content/themes/nestcopenhagen/style.css
 wp-content/themes/nestcopenhagen/stylesheets/main.css
+
+
+
+wp-content/themes/nestcopenhagen/.style.css
+wp-content/themes/nestcopenhagen/.style.css.map
+wp-content/themes/nestcopenhagen/style.css.map

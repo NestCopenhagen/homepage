@@ -32,11 +32,16 @@ get_header(); ?>
   </div>
 </div>
 
+
+<!--
 <div class="pre-spot">
   <div class="container">
     <div class="row">
       <div class="col-sm-6">
-        <!--<p>Manifesto</p>-->
+
+        <img src="<?php bloginfo('template_url'); ?>/images/manifesto.jpg" 
+          alt="Nest Manifesto" class="manifesto" />
+
       </div>
       <div class="col-sm-6">
         <div class="fb-page" data-href="https://www.facebook.com/NestCopenhagen" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
@@ -46,6 +51,7 @@ get_header(); ?>
     </div>
   </div>
 </div>
+-->
 
 <div id="people" class="people np">
   <div class="container">
@@ -61,16 +67,13 @@ get_header(); ?>
             ));
             preg_match("/src=\"(.+?)\"/i", $profileImg, $matches);
             $profileImg = $matches[1]; ?>
-              <!--<a href=""-->
-              <span
-                class="user-profile-teaser"
+              <span class="user-profile-teaser"
                 style="background-image: url('<?php echo $profileImg ?>')">
                 <div class="overlay">
                   <div>
                     <h4><?php echo $user->data->display_name ?></h4>
                   </div>
                 </div>
-              <!--</a>-->
               </span>
 <?php
   endforeach;
