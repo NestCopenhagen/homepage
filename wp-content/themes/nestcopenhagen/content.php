@@ -20,6 +20,9 @@
     <?php edit_post_link( 'Edit', '<span class="edit-link">', '</span>' ); ?>
   </h1>
 
+  <?php /* ?><p class="meta">Written by: 
+  <?php the_author_posts_link(); ?></p><?php */ ?>
+
   <div class="entry-content">
     <?php
       /* translators: %s: Name of current post */
