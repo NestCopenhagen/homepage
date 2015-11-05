@@ -1,0 +1,28 @@
+@import 'mixins/colors';
+@import 'mixins/utils';
+
+
+.author-page {
+
+}
+
+.author-widget {
+  @include sticks-area;
+  margin-top: -1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid palette(orange, bright);
+
+  .picture {
+    border-radius: 50%;
+    width: 100%;
+  }
+
+  .profile-text {
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin: 0 0 1rem;
+  }
+
+}
