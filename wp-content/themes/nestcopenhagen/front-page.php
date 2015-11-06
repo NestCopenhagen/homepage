@@ -71,9 +71,7 @@ get_header(); ?>
                 href="/author/<?php echo $user->nickname; ?>"
                 style="background-image: url('<?php echo $profileImg ?>')">
                 <div class="overlay">
-                  <div>
-                    <h4><?php echo $user->data->display_name ?></h4>
-                  </div>
+                  <h4><?php echo $user->data->display_name ?></h4>
                 </div>
               </a>
 <?php
