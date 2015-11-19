@@ -18,18 +18,23 @@ get_header(); ?>
 
 <div class="author-widget">
   <div class="container">
-    <div class="col-sm-3">
+    <div class="col-md-2 col-sm-3 picture-col">
       <img src="<?php echo $profileImg ?>" class="picture"
         alt="<?php echo $curauth->display_name; ?>">
     </div>
-    <div class="col-sm-9">
+    <div class="col-md-10 col-sm-9">
       <h2><?php echo $curauth->display_name; ?></h2>
       <p class="profile-text">
         <?php echo $curauth->description; ?>
       </p>
+      
+      <a href="<?php esc_url(the_author_meta('linkedin_profile', $curauth->ID)); ?>"
+        class="btn-linkedin" target="_blank">
+        Linkedin Profile
+      </a>
+
     </div>
   </div>
-  
 
 </div>
 

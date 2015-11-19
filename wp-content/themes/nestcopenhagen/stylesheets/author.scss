@@ -1,7 +1,6 @@
 @import 'mixins/colors';
 @import 'mixins/utils';
 
-
 .author-page {
 
 }
@@ -12,9 +11,14 @@
   padding: 1.5rem 0;
   border-bottom: 1px solid palette(orange, bright);
 
+  .picture-col {
+    text-align: center;
+  }
+
   .picture {
     border-radius: 50%;
-    width: 100%;
+    width: 100;
+    max-width: 7rem;
   }
 
   .profile-text {
@@ -25,4 +29,18 @@
     margin: 0 0 1rem;
   }
 
+  .btn-linkedin {
+    display: inline-block;
+    line-height: 2rem;
+    padding: 0 1rem;
+    border-radius: 3px;
+    background: palette(linkedin);
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      background: palette(linkedin, light);
+    }
+  }
 }
+
