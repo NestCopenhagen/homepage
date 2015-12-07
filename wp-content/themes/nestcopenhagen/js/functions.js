@@ -9,7 +9,7 @@
 ( function( $ ) {
 
 
-  
+
 
  // Do we need this? -- Andy
 
@@ -142,6 +142,7 @@ $(document).ready(function(){
   var $window = $( window ),
       $navbar = $( '.site-navigation' ),
       $header = $( '.site-header' ),
+      $siteNavigation = $( '.site-navigation' ),
       headerHeight = $header.outerHeight(),
       navbarIsFixed = false;
 
@@ -156,6 +157,9 @@ $(document).ready(function(){
     }
   });
 
+  $siteNavigation.on('click', function() {
+    $siteNavigation.toggleClass('open');
+  });
 
 
 	// Maps stuff!

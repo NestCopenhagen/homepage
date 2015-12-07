@@ -1,28 +1,21 @@
+@import './variables';
+
 @import './vendor/bootstrap.css';
 @import './mixins/colors';
 @import './mixins/utils';
 
-$font-size: 16px;
-$font-size-max: 36px;
-$base-height: 24px;
-
-// Media device widths
-$screen-xs-max: 767px;
-$screen-sm-min: 768px;
-$screen-sm-max: 991px;
-$screen-md-min: 992px;
-$screen-md-max: 1199px;
-$screen-lg-min: 1200px;
-
 @import './author';
 @import './single';
+@import './post-summary';
+
+@import './navbar';
+
 
 body, html {
   font-size: $font-size;
   line-height: 1.5rem;
-
   font-family: Helvetica Neue, Helvetica, sans-serif;
-} 
+}
 
 p {
   margin: 0 0 1.5rem;
@@ -250,64 +243,7 @@ p.intro {
 }
 
 
-.site-nav-wrapper {
-  height: 3.75rem;
-  margin-bottom: 1.5rem;
-}
 
-.admin-bar .site-navigation.fixed {
-  top: 32px;
-}
-
-.site-navigation {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  border-bottom: 1px solid palette(orange, bright);
-  line-height: 3.75rem;
-  background: rgba(palette(white), 0.95);
-
-  &.fixed {
-    position: fixed;
-    z-index: 1;
-  }
-
-  ul {
-    position: relative;
-    left: -15px;
-    height: 3.75rem;
-    padding: 0 1px 0 0;
-    margin: 0;
-    //overflow: hidden;
-    list-style-type: none;
-  }
-
-  li {
-    float: left;
-  }
-
-  a {
-    display: block;
-    text-transform: uppercase;
-    color: palette(orange);
-    font-size: 1.5em;
-    font-weight: 500;
-    padding: 0 15px;
-    margin: 0 5px -1px 0;
-    transition: all 0.2s ease-in-out;
-    box-shadow: inset 0 0 palette(white);
-
-    &:hover {
-      text-decoration: none;
-      box-shadow: inset 0 -3px palette(orange);
-    }
-  }
-
-  .current-menu-item a {
-    box-shadow: inset 0 -1px palette(orange);
-  }
-}
 
 
 .photo-slide-page {

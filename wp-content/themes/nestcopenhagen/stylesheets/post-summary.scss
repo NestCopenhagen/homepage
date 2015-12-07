@@ -1,0 +1,44 @@
+@import 'mixins/colors';
+@import 'mixins/utils';
+@import './variables';
+
+
+.post-list {
+  .post-summary:not(:first-child) {
+    border-top: 1px solid palette(gray, light);
+  }
+}
+
+.post-summary {
+
+  padding: 3rem 0;
+
+  .title {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 500;
+
+    a {
+      color: palette(gray, heading);
+    }
+  }
+
+  .date {
+    color: palette(blue, dark);
+    line-height: 1;
+    margin: 1rem 0 0.75rem;
+    font-weight: 500;
+  }
+
+  img.post-thumbnail {
+    display: none;
+    border-radius: 50%;
+    width: 100%;
+
+    @media only screen and (min-width: $screen-sm-min) {
+      display: block;
+    }
+  }
+}
+
+

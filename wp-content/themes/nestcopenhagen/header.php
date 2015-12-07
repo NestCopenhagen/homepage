@@ -71,8 +71,15 @@
 <div class="site-nav-wrapper">
   <nav class="site-navigation">
     <div class="container">
+      <div class="row mobile-menu">
+        <div class="col-sm-12">
+          <img src="<?php bloginfo('template_url'); ?>/images/burger.svg"
+            alt="Nest Copenhagen"
+            class="burger">
+        </div>
+      </div>
       <div class="row">
-        <?php wp_nav_menu( array( 
+        <?php wp_nav_menu( array(
           'theme_location' => 'header-menu',
           'container_class' => 'col-sm-12'
         ) ); ?>

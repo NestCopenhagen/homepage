@@ -12,10 +12,39 @@ if ( ! function_exists( 'nest_setup' ) ) :
 
     add_image_size( 'frontpage-profile-picture', 360, 360, true );
 
+    // Add thumbnails
+    add_theme_support( 'post-thumbnails' );
+    set_post_thumbnail_size( 320, 320, true );
+    add_image_size( 'single-post-thumbnail', 1400, 400, true );
+    add_image_size( 'single-post-thumbnail@2x', 2800, 800, true );
+
+
   }
 endif; // twentyfifteen_setup
 
 add_action( 'after_setup_theme', 'setup' );
+
+function get_excerpt($post, $count){
+  $permalink = get_permalink($post->ID);
+  $excerpt = $post->post_content;
+  $excerpt = strip_tags($excerpt);
+  $excerpt = substr($excerpt, 0, $count);
+  $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+  $excerpt = $excerpt.'... <a href="'.$permalink.'">Read More</a>';
+  return $excerpt;
+}
+
+function short_description($desc, $count) {
+  $desc = strip_tags($desc);
+  $desc = substr($desc, 0, $count);
+  $desc = substr($desc, 0, strripos($desc, " "));
+  return $desc .'...';
+}
+
+function getPostThumbnail($postID) {
+  $url = wp_get_attachment_image_src( get_post_thumbnail_id($postID) );
+  return $url[0];
+}
 
 
 

@@ -3,16 +3,18 @@
  * @package Nest Copenhagen
  */
 
-get_header(); ?>
+get_header();
+
+$currentPostId = 0; ?>
 
 
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
   <?php
-    $curauth = get_the_author();
+    $currentPostId = get_the_ID();
 
-    $profileImg = mt_profile_img( $curauth->data->ID , array( 
+    $profileImg = mt_profile_img( get_the_author_meta('ID') , array(
       'size' => 'frontpage-profile-picture', 'echo' => false
     ));
     preg_match("/src=\"(.+?)\"/i", $profileImg, $matches);
@@ -21,15 +23,13 @@ get_header(); ?>
 
 
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    
-    <?php
-      $photo = '';
-      if (has_post_thumbnail( $post_id )) {
-        $photo = get_the_post_thumbnail();
-      }
-      $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-    ?>
 
+    <?php
+      $url = wp_get_attachment_image_src(get_post_thumbnail_id(),
+        'single-post-thumbnail')[0];
+      $url2x = wp_get_attachment_image_src(get_post_thumbnail_id(),
+        'single-post-thumbnail@2x' )[0];
+    ?>
 
     <header class="post-header" style="background-image: url('<?php echo $url ?>')">
       <div class="gradient"></div>
@@ -55,7 +55,11 @@ get_header(); ?>
 
       </div>
       <div class="col-md-8 col-sm-9">
-        <h3 class="author-name">By <?php the_author_meta('display_name'); ?></h3>
+        <h3 class="author-name">By
+          <a href="/author/<?php the_author_meta('nickname'); ?>">
+          <?php the_author_meta('display_name'); ?>
+          </a>
+        </h3>
 
         <div class="post-content">
           <?php the_content(); ?>
@@ -78,9 +82,16 @@ get_header(); ?>
             alt="<?php the_author_meta('display_name'); ?>">
         </div>
         <div class="col-md-10 col-sm-9">
-          <h2><?php the_author_meta('display_name'); ?></h2>
+          <h2>
+            <a href="/author/<?php the_author_meta('nickname'); ?>">
+              <?php the_author_meta('display_name'); ?>
+            </a>
+          </h2>
           <p class="profile-text">
-            <?php the_author_meta('description'); ?>
+            <?php echo short_description(get_the_author_meta('description'), 250); ?>
+            <a href="/author/<?php the_author_meta('nickname'); ?>" class="read-more">
+              Read the rest
+            </a>
           </p>
         </div>
       </div>
@@ -88,6 +99,11 @@ get_header(); ?>
     </div>
 
   </article><!-- #post-## -->
+
+
+  <?php endwhile; else : ?>
+    <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+  <?php endif; ?>
 
   <div class="content">
     <div class="container">
@@ -97,8 +113,46 @@ get_header(); ?>
     </div>
   </div>
 
-<?php endwhile; else : ?>
-  <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-<?php endif; ?>
+
+  <div class="post-list">
+    <?php
+      $args = array(
+        'orderby' => 'post_date',
+        'order'   => 'ASC'
+      );
+      $author_posts=  get_posts( $args );
+      if($author_posts){
+        foreach ($author_posts as $post) :
+          if ($currentPostId != $post->ID) :
+            setup_postdata( $post ); ?>
+
+            <div class="post-summary">
+              <div class="container">
+                <div class="col-sm-3">
+                  <?php $url = getPostThumbnail($post->ID); ?>
+                  <img src="<?php echo $url; ?>" alt="<?php echo $post->post_title; ?>"
+                    class="post-thumbnail">
+                </div>
+                <div class="col-sm-9">
+                  <h3 class="title">
+                    <a href="<?php echo get_permalink($post->ID) ?>">
+                      <?php echo $post->post_title; ?>
+                    </a>
+                  </h3>
+                  <div class="date">
+                    <?php echo get_the_date( 'F j, Y' ); ?>
+                  </div>
+                  <p>
+                    <?php echo get_excerpt($post, 300); ?>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+<?        endif;
+        endforeach;
+      }
+    ?>
+  </div>
 
 <?php get_footer(); ?>
