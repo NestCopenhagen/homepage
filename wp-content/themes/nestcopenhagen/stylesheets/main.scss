@@ -23,8 +23,8 @@ p {
 }
 
 h2 {
-  font-size: $font-size-max;
-  line-height: 2rem;
+  font-size: 2.25rem;
+  line-height: 1em;
   margin: 1.5rem 0;
   font-weight: 500;
   color: palette(gray, heading);
@@ -62,7 +62,7 @@ h5 {
   -webkit-font-smoothing: antialiased;
 
   .site-description {
-    font-size: $font-size-max;
+    font-size: 2.25rem;
     font-weight: 500;
     line-height: 3rem;
     padding-top: 10rem;
@@ -70,7 +70,7 @@ h5 {
   }
 
   .site-title, .page-title {
-    font-size: $font-size-max;
+    font-size: 2.25rem;
     font-weight: 200;
     padding: 0;
     padding-bottom: 0;
@@ -81,8 +81,9 @@ h5 {
     span { font-weight: 600; }
   }
 
-  h2.site-title {
-    margin-left: -3px;
+  .site-title img {
+    width: 100%;
+    max-width: 350px;
   }
 
   .hero-message h4 {
@@ -99,6 +100,19 @@ h5 {
 
     span.edit-link {
       font-size: 0.5em;
+    }
+  }
+
+  @media only screen and (max-width: $screen-xs-max) {
+    .pagehead {
+      margin-top: 3.75rem;
+    }
+
+    .site-description {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      padding-top: 7rem;
+      padding-bottom: 2rem;
     }
   }
 }
@@ -145,7 +159,7 @@ p.intro {
     background: url('./images/frontpage-spot.jpg') no-repeat center top;
     background-size: cover;
 
-    font-size: $font-size-max;
+    font-size: 2.25rem;
     line-height: 1.3em;
   }
 
@@ -155,6 +169,12 @@ p.intro {
 
   .fat {
     font-weight: 500;
+  }
+
+  @media only screen and (max-width: $screen-xs-max) {
+    &.frontpage-spot {
+      font-size: 1.5rem;
+    }
   }
 }
 
@@ -313,10 +333,6 @@ p.intro {
 #footer {
   margin: 50px 0 80px;
   font-size: $font-size * 1.25;
-}
-
-#footer p {
-  margin-right: 220px;
 }
 
 #footer .c {

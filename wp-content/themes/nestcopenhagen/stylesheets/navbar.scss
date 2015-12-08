@@ -3,11 +3,6 @@
 @import './variables';
 
 
-@media only screen and (max-width: $screen-xs-max) {
-  body {
-    margin-top: 3.75rem;
-  }
-}
 
 .site-navigation {
   position: fixed;

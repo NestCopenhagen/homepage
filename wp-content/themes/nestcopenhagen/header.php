@@ -24,7 +24,7 @@
 
 <header class="site-header" role="banner">
   <div class="container">
-    <?php if ( is_front_page() && is_home() ) : ?>
+    <?php if ( is_front_page() ) : ?>
 
       <?php $description = get_bloginfo( 'description', 'display' );
       if ( $description || is_customize_preview() ) : ?>
@@ -36,7 +36,7 @@
         <div class="col-sm-12">
           <h1 class="site-title">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-              <img src="<?php bloginfo('template_url'); ?>/images/logo.svg" width="351" height="56" alt="Nest Copenhagen">
+              <img src="<?php bloginfo('template_url'); ?>/images/logo.svg" alt="Nest Copenhagen">
             </a>
           </h1>
         </div>

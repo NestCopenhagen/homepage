@@ -53,6 +53,11 @@ $currentPostId = 0; ?>
           <div class="day"><?php echo get_the_date('j'); ?></div>
         </div>
 
+
+        <div class="fb-share-button"
+          data-href="<?php echo get_permalink(); ?>"
+          data-layout="box_count"></div>
+
       </div>
       <div class="col-md-8 col-sm-9">
         <h3 class="author-name">By
