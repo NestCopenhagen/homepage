@@ -42,13 +42,13 @@ get_header(); ?>
 <?php
   $users = get_users(array('orderby' => 'name'));
   foreach( $users as $user ) :
-            $profileImg = mt_profile_img( $user->data->ID , array( 
+            $profileImg = mt_profile_img( $user->data->ID , array(
               'size' => 'frontpage-profile-picture', 'echo' => false
             ));
             preg_match("/src=\"(.+?)\"/i", $profileImg, $matches);
             $profileImg = $matches[1]; ?>
               <a class="user-profile-teaser"
-                href="/author/<?php echo $user->nickname; ?>"
+                href="/author/<?php echo str_replace(' ', '-', $user->nickname); ?>"
                 style="background-image: url('<?php echo $profileImg ?>')">
                 <div class="overlay">
                   <h4><?php echo $user->data->display_name ?></h4>
