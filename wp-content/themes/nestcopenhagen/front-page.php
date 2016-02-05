@@ -33,26 +33,6 @@ get_header(); ?>
 </div>
 
 
-<!--
-<div class="pre-spot">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-
-        <img src="<?php bloginfo('template_url'); ?>/images/manifesto.jpg" 
-          alt="Nest Manifesto" class="manifesto" />
-
-      </div>
-      <div class="col-sm-6">
-        <div class="fb-page" data-href="https://www.facebook.com/NestCopenhagen" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
-        <div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/NestCopenhagen"><a href="https://www.facebook.com/NestCopenhagen">Nest Copenhagen Facebook Page</a></blockquote>
-        </div></div>
-      </div>
-    </div>
-  </div>
-</div>
--->
-
 <div id="people" class="people np">
   <div class="container">
     <div class="row">
