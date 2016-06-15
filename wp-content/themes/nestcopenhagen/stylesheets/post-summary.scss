@@ -1,6 +1,5 @@
 @import 'mixins/colors';
 @import 'mixins/utils';
-@import './variables';
 
 
 .post-list {
@@ -17,7 +16,6 @@
     font-size: 2rem;
     margin: 0;
     font-weight: 500;
-    line-height: 1;
 
     a {
       color: palette(gray, heading);
@@ -32,13 +30,8 @@
   }
 
   img.post-thumbnail {
-    display: none;
     border-radius: 50%;
     width: 100%;
-
-    @media only screen and (min-width: $screen-sm-min) {
-      display: block;
-    }
   }
 }
 
