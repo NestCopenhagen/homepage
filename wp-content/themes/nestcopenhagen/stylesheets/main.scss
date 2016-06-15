@@ -214,6 +214,10 @@ p.intro {
     transition: all 0.1s ease-in-out;
   }
 
+  &.no-image .overlay {
+    opacity: 1;
+  }
+
   h4 {
     border-radius: 50%;
     color: palette(white);
