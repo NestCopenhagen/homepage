@@ -40,16 +40,35 @@ get_header(); ?>
         <h2>Who&#8217;s in the Nest?</h2>
         <div class="profile-teaser-container">
 <?php
-  $users = get_users(array('orderby' => 'name'));
+  $users = get_users(array(
+    'role__not_in' => array('subscriber'),
+    'orderby' => 'name'
+  ));
   foreach( $users as $user ) :
+    if(in_array('subscriber', $user->roles)):
+      continue;
+    endif;
             $profileImg = mt_profile_img( $user->data->ID , array(
               'size' => 'frontpage-profile-picture', 'echo' => false
             ));
             preg_match("/src=\"(.+?)\"/i", $profileImg, $matches);
-            $profileImg = $matches[1]; ?>
-              <a class="user-profile-teaser"
+            $profileImg = $matches[1];
+?>
+              <a class="user-profile-teaser<?php
+
+            if(empty($profileImg)):
+              ?> no-image<?php
+            endif;
+
+              ?>"
                 href="/author/<?php echo str_replace(' ', '-', $user->nickname); ?>"
-                style="background-image: url('<?php echo $profileImg ?>')">
+<?php
+            if(!empty($profileImg)):
+?>
+                style="background-image: url('<?php echo $profileImg ?>')"
+<?php
+            endif;
+              ?>>
                 <div class="overlay">
                   <h4><?php echo $user->data->display_name ?></h4>
                 </div>
