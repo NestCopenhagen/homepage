@@ -1,0 +1,333 @@
+$base-distance: 15px;
+$base-distance-big: 35px;
+$screen-desktop-min: 783px;
+$screen-mobile-max: 782px;
+$border-radius-big: 6px;
+$border-radius: 3px;
+
+
+.nt-support-page {
+  background: palette(white);
+  display: flex;
+  height: 100vh;
+
+  @media (min-width: $screen-desktop-min) {
+    justify-content: center;
+    align-items: center;
+    background: palette(gray, light);
+  }
+}
+
+.nt-support-modal {
+  position: relative;
+  width: 100%;
+
+  @media (min-width: $screen-desktop-min) {
+    width: 730px;
+    height: 604px;
+    border-radius: $border-radius-big;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  }
+
+
+  &--completed {
+    .nt-support-completed--mobile {
+      transform: translate(0, 0);
+      opacity: 1;
+      transition: all 0.4s 0.3s ease-out;
+    }
+
+    @media (max-width: $screen-mobile-max) {
+      .nt-support-amount,
+      .nt-support-modal__footer {
+        opacity: 0;
+        transition: all 0.4s ease-in;
+      }
+    }
+
+    @media (min-width: $screen-desktop-min) {
+      transition: height 0.5s ease-in-out;
+      height: 360px;
+
+      .nt-support-modal__header {
+        z-index: 3;
+        border-radius: $border-radius-big;
+
+        &:after {
+          border-radius: $border-radius-big;
+        }
+
+        transition: border-radius 0.5s ease-in-out;
+      }
+
+      .nt-support-title {
+        transform: translate(0, 10px);
+        opacity: 0;
+        transition: all 0.4s ease-in;
+      }
+
+      .nt-support-completed--desktop {
+        transform: translate(0, 0);
+        opacity: 1;
+        transition: all 0.4s 0.3s ease-out;
+      }
+    }
+  }
+
+  &__header {
+    position: relative;
+    padding: $base-distance;
+    background: url('./images/leo-toast.jpg') no-repeat center;
+    background-size: cover;
+    height: 200px;
+    color: palette(white);
+
+    &:after {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(palette(orange, dark), .5);
+      z-index: 0;
+    }
+
+    @media (min-width: $screen-desktop-min) {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 360px;
+      border-radius: $border-radius-big $border-radius-big 0 0;
+      padding: $base-distance-big;
+    }
+
+    @media (min-width: $screen-desktop-min) {
+      &:after {
+        border-radius: $border-radius-big $border-radius-big 0 0;
+      }
+    }
+
+
+  }
+
+  &__content {
+    border-top: 5px solid palette(orange);
+    padding: $base-distance;
+    background: palette(white);
+
+    @media (min-width: $screen-desktop-min) {
+      position: absolute;
+      bottom: 75px;
+      width: 100%;
+      padding: $base-distance-big;
+    }
+  }
+
+  &__footer {
+    padding: 0 $base-distance $base-distance;
+    background: palette(white);
+    text-align: center;
+
+    @media (min-width: $screen-desktop-min) {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      border-radius: 0 0 $border-radius-big $border-radius-big;
+      padding: 0 $base-distance-big $base-distance-big;
+    }
+
+  }
+}
+
+.nt-support-completed {
+  color: inherit;
+  -webkit-font-smoothing: antialiased;
+  transform: translate(0, -10px);
+  opacity: 0;
+  position: absolute;
+
+  @media (min-width: $screen-desktop-min) {
+    width: 52%;
+    z-index: 1;
+    top: 53%;
+  }
+
+  &__header {
+    font-size: 27px;
+    margin: 0;
+    padding: 0 0 8px;
+    font-weight: normal;
+    line-height: 1;
+    white-space: nowrap;
+    color: inherit;
+
+    @media (min-width: $screen-desktop-min) {
+      font-size: 36px;
+    }
+  }
+
+  &__sub {
+    font-size: 16px;
+  }
+
+  @media (min-width: $screen-desktop-min) {
+    &--mobile {
+      display: none;
+    }
+  }
+}
+
+.nt-support-title {
+  color: inherit;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  bottom: 15%;
+
+  @media (min-width: $screen-desktop-min) {
+    bottom: 22%;
+  }
+
+  &__header {
+    font-size: 27px;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    line-height: 1;
+    white-space: nowrap;
+    color: inherit;
+
+    @media (min-width: $screen-desktop-min) {
+      font-size: 36px;
+    }
+  }
+
+  &__logo {
+    height: 50px;
+    margin-right: $base-distance / 2;
+
+    @media (min-width: $screen-desktop-min) {
+      height: 60px;
+      margin-right: $base-distance-big / 2;
+    }
+  }
+
+  &__sub {
+    font-size: 16px;
+  }
+}
+
+
+.nt-support-amount {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $screen-desktop-min) {
+    flex-direction: row;
+  }
+
+  &__section {
+    flex: 1;
+    transition: opacity 0.1s ease-in-out;
+
+    &--inactive {
+      opacity: 0.5;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__or {
+    font-size: 14px;
+    font-weight: 700;
+    margin: $base-distance 0;
+    text-align: center;
+
+    @media (min-width: $screen-desktop-min) {
+      width: $base-distance-big * 2;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    margin: 0 0 $base-distance;
+    font-weight: normal;
+    text-align: center;
+
+    @media (min-width: $screen-desktop-min) {
+      margin-bottom: $base-distance-big;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__button {
+    width: calc(33.3333% - 12.5px);
+
+    input {
+      display: none;
+
+      &:checked + .nt-button {
+        opacity: 1;
+      }
+    }
+
+    .nt-button {
+      width: 100%;
+      opacity: 0.5;
+      transition: opacity 0.1s ease-in-out;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.nt-button {
+  -webkit-font-smoothing: antialiased;
+  background: palette(orange);
+  border: none;
+  border-radius: $border-radius;
+  color: palette(white);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: $base-distance-big;
+  padding: 0 $base-distance;
+  letter-spacing: 1px;
+  text-align: center;
+  cursor: pointer;
+  transition: opacity 0.1s ease-in-out;
+
+  &--big {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: $base-distance-big + 5px;
+    padding: 0 $base-distance-big;
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+  }
+}
+
+.nt-input {
+  border: 2px solid palette(orange, dark);
+  color: palette(black);
+  border-radius: $border-radius;
+  height: $base-distance-big;
+  padding: 0 $base-distance;
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+}
+
+
+
+

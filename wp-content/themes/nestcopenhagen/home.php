@@ -10,7 +10,7 @@ get_header(); ?>
     <?php
       $args = array(
         'orderby' => 'post_date',
-        'order'   => 'ASC'
+        'order'   => 'DESC'
       );
       $author_posts=  get_posts( $args );
       if($author_posts){
