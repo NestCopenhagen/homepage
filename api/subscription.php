@@ -1,8 +1,8 @@
 <?php
 
 $http_origin = $_SERVER['HTTP_ORIGIN'];
-if (endsWith($http_origin, ".nestcopenhagen.dk")) {
-    header("Access-Control-Allow-Origin: $http_origin");
+if (endsWith($http_origin, "nestcopenhagen.dk")) {
+  header("Access-Control-Allow-Origin: $http_origin");
 }
 
 require_once('vendor/autoload.php');
