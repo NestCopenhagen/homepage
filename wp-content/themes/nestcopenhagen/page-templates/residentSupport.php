@@ -107,7 +107,7 @@
     var INPUT_NAME_AMOUNT = 'amount'
     var INPUT_NAME_TYPE = 'type-amount'
 
-    var amount = 0
+    var amount = 100
 
     var handler = StripeCheckout.configure({
       key: "pk_live_S5mDjjIZYqRaC39miHb4jHy8",
