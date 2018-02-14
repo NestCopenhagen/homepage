@@ -4,6 +4,7 @@ test.html
 
 wp-content/uploads
 .sass-cache/
+STRIPE_KEY
 
 # Generated files
 wp-content/themes/nestcopenhagen/style.css

@@ -7,8 +7,10 @@ if (endsWith($http_origin, ".nestcopenhagen.dk")) {
 
 require_once('vendor/autoload.php');
 
+$stripeKey = file_get_contents('./STRIPE_KEY')
+
 // This is currently the live key!
-\Stripe\Stripe::setApiKey("sk_live_ET7tzxMRZpCc2UopEt1CT94T");
+\Stripe\Stripe::setApiKey($stripeKey);
 
 $token = $_POST['token'];
 $email = $_POST['email'];
