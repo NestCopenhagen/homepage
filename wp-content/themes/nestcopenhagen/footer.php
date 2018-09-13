@@ -33,9 +33,6 @@
     ga('send', 'pageview');
 
   </script>
-
-
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
   <?php wp_footer(); ?>
 
 </body>

@@ -87,7 +87,7 @@ get_header(); ?>
   <div class="container">
     <div class="overlay">
       <h2>This is where we&#8217;re located.</h2>
-      <p>At Reventlowsgade 10, 1651 Copenhagen V. Right next to Copenhagen&#8217;s Main Central Station, Tivoli,
+      <p>In central Copenhagen, right next to Copenhagen&#8217;s Main Central Station, Tivoli,
       the Copenhagen lakes and the Meatpacking District &#8212; <em>smack</em> downtown!</p>
     </div>
   </div>

@@ -41,14 +41,20 @@
           </h1>
         </div>
       </div>
+<?php
+      $page = get_page_by_path('frontpage', OBJECT);
+      $heroMessage = get_post_custom($page->ID)['hero_message'][0];
 
+      if ($heroMessage) {
+?>
       <div class="row hero-message">
         <div class="col-sm-12">
-          <?php $page = get_page_by_path('frontpage', OBJECT); ?>
-          <h4><?php echo get_post_custom($page->ID)['hero_message'][0]; ?>&ensp;</h4>
+          <h4><strong><?php echo htmlspecialchars($heroMessage); ?></strong></h4>
         </div>
       </div>
-
+<?php
+      }
+?>
     <?php else: ?>
 
       <div class="row pagehead">

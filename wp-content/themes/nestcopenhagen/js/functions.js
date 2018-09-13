@@ -163,7 +163,7 @@ $(document).ready(function(){
 
 
 	// Maps stuff!
-	var map, styles = [
+	/*var map, styles = [
 		{
 		  "featureType": "water",
 		  "stylers": [
@@ -255,7 +255,7 @@ $(document).ready(function(){
 		});
 	}
 
-	google.maps.event.addDomListener(window, 'load', initialize);
+	google.maps.event.addDomListener(window, 'load', initialize);*/
 })
 
 } )( jQuery );

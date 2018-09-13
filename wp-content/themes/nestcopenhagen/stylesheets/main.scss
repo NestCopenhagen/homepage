@@ -41,7 +41,6 @@ h2 {
   color: palette(gray, heading);
 }
 
-
 h5 {
   font-size: 0.9rem;
   text-transform: uppercase;
@@ -107,6 +106,24 @@ h5 {
     margin-bottom: 3rem;
     font-size: 1.2rem;
     line-height: 1.5em;
+
+    @media only screen and (max-width: $screen-sm-min) {
+      background-color: palette(blue, bright);
+      color: #000;
+      padding: 4px 10px;
+      border-bottom: 1px solid rgba(0,0,0,.5);
+      text-align: center;
+    }
+
+    @media only screen and (min-width: $screen-md-min) {
+      text-indent: -10px;
+      strong {
+        background-color: palette(blue, bright);
+        color: #000;
+        padding: 4px 10px;
+        border-bottom: 1px solid rgba(0,0,0,.5);
+      }
+    }
   }
 
   .page-title {
@@ -271,7 +288,7 @@ p.intro {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 10;
   width: 100%;
   line-height: 3.75rem;
   border-bottom: 1px solid palette(orange, bright);
@@ -349,7 +366,7 @@ p.intro {
 
     &.fixed {
       position: fixed;
-      z-index: 1;
+      z-index: 10;
     }
 
     ul {
@@ -400,7 +417,7 @@ p.intro {
 }
 
 #map {
-  background-color: #ed6c22;
+  background-color: palette(orange);
   position: relative;
   //height: 415px;
   overflow: hidden;
@@ -416,7 +433,8 @@ p.intro {
 }
 
 #map-canvas, #map-canvas[style] {
-  background-color: #ed6c22 !important;
+  background: palette(orange) url(./images/cph-map.gif) no-repeat center center;
+  background-size: 1425px 1264px;
 }
 
 #map .overlay {
@@ -430,6 +448,7 @@ p.intro {
   h2 {
     margin-top: 80px;
     margin-left: 300px;
+    line-height: 1.2em;
   }
 
   p {
@@ -451,32 +470,39 @@ p.intro {
 #footer {
   margin: 50px 0 80px;
   font-size: $font-size * 1.25;
-}
 
-#footer p {
-  margin-right: 220px;
-}
+  .c {
+    position: relative;
+    overflow: hidden;
+  }
 
-#footer .c {
-  position: relative;
-  overflow: hidden;
-}
+  strong {
+    font-weight: 500;
+    color: palette(gray, heading);
+  }
 
-#footer strong {
-  font-weight: 500;
-  color: palette(gray, heading);
-}
+  p.apply {
+    margin-top: 30px;
 
-#footer p.apply {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-right: 0;
-}
+    a {
+      background-color: palette(orange);
+      color: palette(white);
+      padding: 4px 15px;
+      border-radius: 6px;
+    }
+  }
 
-#footer p.apply a {
-  background-color: palette(orange);
-  color: palette(white);
-  padding: 4px 15px;
-  border-radius: 6px;
+  @media only screen and (min-width: $screen-md-min) {
+    p {
+      margin-right: 220px;
+    }
+
+    p.apply {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-top: 0;
+      margin-right: 0;
+    }
+  }
 }
