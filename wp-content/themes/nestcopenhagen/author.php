@@ -3,9 +3,6 @@
  * @package Nest Copenhagen
  */
 
-get_header(); ?>
-
-<?php
   $curauth = (isset($_GET['author_name'])) ?
     get_user_by('slug', $author_name) : get_userdata(intval($author));
 
@@ -14,6 +11,10 @@ get_header(); ?>
   ));
   preg_match("/src=\"(.+?)\"/i", $profileImg, $matches);
   $profileImg = $matches[1];
+
+  $linkedInUrl = get_the_author_meta('linkedin_profile', $curauth->ID);
+
+  get_header();
 ?>
 
 <div class="author-widget">
@@ -24,20 +25,26 @@ get_header(); ?>
     </div>
     <div class="col-md-10 col-sm-9">
       <h2><?php echo $curauth->display_name; ?></h2>
-      <p class="profile-text">
-        <?php echo $curauth->description; ?>
-      </p>
+      <div class="profile-text">
+        <?php echo apply_filters('the_content', $curauth->description); ?>
+      </div>
 
-      <a href="<?php esc_url(the_author_meta('linkedin_profile', $curauth->ID)); ?>"
-        class="btn-linkedin" target="_blank">
-        Linkedin Profile
-      </a>
+<?php
+  if ($linkedInUrl) {
+?>
+      <p>
+        <a href="<?php echo esc_url($linkedInUrl); ?>"
+          class="btn-linkedin" target="_blank">
+          LinkedIn Profile
+        </a>
+      </p>
+<?php
+  }
+?>
 
     </div>
   </div>
-
 </div>
-
 
 <div class="post-list">
   <?php
