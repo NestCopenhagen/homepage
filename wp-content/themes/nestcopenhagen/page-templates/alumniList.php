@@ -5,6 +5,7 @@
 
 get_header(); ?>
 
+<div class="author-widget">
   <div class="container support-page">
     <div class="row">
       <div class="col-sm-12">
@@ -53,5 +54,6 @@ get_header(); ?>
       </div>
     </div>
   </div>
+</div>
 
 <?php get_footer(); ?>
