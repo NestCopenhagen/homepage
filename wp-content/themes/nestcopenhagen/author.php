@@ -20,23 +20,41 @@
 <div class="author-widget">
   <div class="container">
     <div class="col-md-2 col-sm-3 picture-col">
+<?php
+  if ($profileImg) {
+?>
       <img src="<?php echo $profileImg ?>" class="picture"
-        alt="<?php echo $curauth->display_name; ?>">
+        alt="Picture of <?php echo $curauth->display_name; ?>">
+<?php
+  }
+?>
     </div>
     <div class="col-md-10 col-sm-9">
       <h2><?php echo $curauth->display_name; ?></h2>
       <div class="profile-text">
-        <?php echo apply_filters('the_content', $curauth->description); ?>
+<?php
+  if ($curauth->description) {
+    echo apply_filters('the_content', $curauth->description);
+  }
+
+  else {
+?>
+        <p>Sadly, this wonderful person hasn&#8217;t written a bio yet!</p>
+<?php
+  }
+?>
       </div>
 
 <?php
   if ($linkedInUrl) {
 ?>
       <p>
-        <a href="<?php echo esc_url($linkedInUrl); ?>"
-          class="btn-linkedin" target="_blank">
-          LinkedIn Profile
-        </a>
+        <strong>
+          <a href="<?php echo esc_url($linkedInUrl); ?>"
+            class="btn-linkedin" target="_blank">
+            LinkedIn Profile
+          </a>
+        </strong>
       </p>
 <?php
   }
