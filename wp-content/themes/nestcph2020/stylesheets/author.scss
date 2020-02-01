@@ -1,0 +1,51 @@
+@import 'mixins/colors';
+@import 'mixins/utils';
+
+.author-page {
+
+}
+
+.author-widget {
+  @include sticks-area;
+  margin-top: -1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid palette(orange, bright);
+
+  .picture-col {
+    text-align: center;
+  }
+
+  .picture {
+    border-radius: 50%;
+    width: 100;
+    max-width: 7rem;
+  }
+
+  .profile-text {
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    line-height: 1;
+    margin: 0 0 1rem;
+
+    a {
+      color: palette(gray, heading);
+    }
+  }
+
+  .btn-linkedin {
+    display: inline-block;
+    line-height: 2rem;
+    padding: 0 1rem;
+    border-radius: 3px;
+    background: palette(linkedin);
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      background: palette(linkedin, light);
+    }
+  }
+}
+
