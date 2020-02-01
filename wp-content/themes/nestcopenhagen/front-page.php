@@ -7,7 +7,7 @@ get_header(); ?>
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <h2>What is Nest?</h2>
+      <h2>Home.</h2>
     </div>
   </div>
   <div class="row">
@@ -24,7 +24,7 @@ get_header(); ?>
   <div class="container">
     <div class="row spot">
       <div class="col-sm-12">
-        <p>20 ambitious entrepreneurs as your roommates.</p>
+        <p>20 ambitious residents as your roommates.</p>
         <p><span class="fat">A house of diverse backgrounds and skills.</span></p>
         <p>Community dinners and social gatherings.</p>
       </div>
@@ -32,6 +32,23 @@ get_header(); ?>
   </div>
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>About Nest</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <p>Nest is located in the center of Copenhagen across the street from the Central Station. We can literally see it from our windows.</p>
+      <p>Nest is spread out over four separate, adjacent apartments, each with room for 4-6 residents and its own shared kitchen. You can get your very own room in one of these apartments, which is where you will share tons of great nights with your fellow residents. However, your key gives you access to all the other three apartments, making the entire place your home.</p>
+      <p>Unlike many other collective living places, the unique thing about Nest is that your roommates also happen to be amazing innovators, who are makers — just like you. In Nest, we believe that nothing is impossible, nothing is too crazy, and everything is achievable with the help of a few fellow dreamers and passionate do-ers.</p>
+      <p>In Nest, there is always something to look forward to and someone to learn from. That’s what happens when you get 21 genuine, awesome innovative minds together, who really want to be a part of each others lives.</p>
+      <p>Does that sound good? Ask yourself: Are you a Nester? Join us.</p>
+      <p><strong><a href="/apply">Take me to the apply page!</a></strong></p>
+    </div>
+  </div>
+</div>
 
 <div id="people" class="people np">
   <div class="container">
