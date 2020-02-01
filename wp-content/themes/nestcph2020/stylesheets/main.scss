@@ -212,8 +212,12 @@ p.intro {
 .site-spot {
   margin: 3rem 0;
   padding: 3rem 0;
-  font-weight: 100;
+  font-weight: 200;
   letter-spacing: .025em;
+
+  @media only screen and (max-width: 500px) {
+    font-weight: 400;
+  }
 
   &, p {
     color: palette(white);
@@ -238,6 +242,10 @@ p.intro {
 
   .fat {
     font-weight: 500;
+
+    @media only screen and (max-width: 500px) {
+      font-weight: 700;
+    }
   }
 }
 
@@ -564,6 +572,7 @@ p.apply {
 #footer {
   margin: 50px 0 80px;
   font-size: $font-size * 1.25;
+  line-height: 1.5em;
 
   .c {
     position: relative;

@@ -522,8 +522,11 @@ p.intro {
 .site-spot {
   margin: 3rem 0;
   padding: 3rem 0;
-  font-weight: 100;
+  font-weight: 200;
   letter-spacing: .025em; }
+  @media only screen and (max-width: 500px) {
+    .site-spot {
+      font-weight: 400; } }
   .site-spot, .site-spot p {
     color: #FFFFFF; }
   .site-spot.frontpage-spot {
@@ -539,6 +542,9 @@ p.intro {
     margin: 0.75rem 0; }
   .site-spot .fat {
     font-weight: 500; }
+    @media only screen and (max-width: 500px) {
+      .site-spot .fat {
+        font-weight: 700; } }
 
 .pre-spot {
   border-bottom: 1px solid #ccc;
@@ -784,7 +790,8 @@ p.apply {
 
 #footer {
   margin: 50px 0 80px;
-  font-size: 20px; }
+  font-size: 20px;
+  line-height: 1.5em; }
   #footer .c {
     position: relative;
     overflow: hidden; }
