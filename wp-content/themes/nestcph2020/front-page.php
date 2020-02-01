@@ -71,6 +71,9 @@ get_header();
     if(in_array('subscriber', $user->roles)):
       continue;
     endif;
+    if ($user->data->display_name == 'Nest Copenhagen'):
+      continue;
+    endif;
             $profileImg = mt_profile_img( $user->data->ID , array(
               'size' => 'frontpage-profile-picture', 'echo' => false
             ));
