@@ -33,6 +33,7 @@ get_header();
         <p>20 ambitious residents as your roommates.</p>
         <p><span class="fat">A house of diverse backgrounds and skills.</span></p>
         <p>Community dinners and social gatherings.</p>
+        <p class="apply"><strong><a href="/apply">Apply now!</a></strong></p>
       </div>
     </div>
   </div>
@@ -51,7 +52,6 @@ get_header();
       <p>Unlike many other collective living places, the unique thing about Nest is that your roommates also happen to be amazing innovators, who are makers — just like you. In Nest, we believe that nothing is impossible, nothing is too crazy, and everything is achievable with the help of a few fellow dreamers and passionate do-ers.</p>
       <p>In Nest, there is always something to look forward to and someone to learn from. That’s what happens when you get 21 genuine, awesome innovative minds together, who really want to be a part of each others lives.</p>
       <p>Does that sound good? Ask yourself: Are you a Nester? Join us.</p>
-      <p class="apply"><strong><a href="/apply">Apply now!</a></strong></p>
     </div>
   </div>
 </div>
